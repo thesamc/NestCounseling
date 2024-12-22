@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- [Previous head content remains the same] -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anxiety & OCD | Nest Counseling</title>
+    <meta name="description" content="Evidence-based therapy for anxiety and OCD including ERP, CBT, and mindfulness techniques. Find peace and take back your life.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* [All the same CSS as the previous file] */
+        .navbar {
+            background-color: white;
+            width: 100%;
+            z-index: 1000;
+            padding: 0.5rem 0;
+        }
+
+        .navbar-brand {
+            margin-right: 2rem;
+            padding: 0;
+        }
+
+        .navbar-nav {
+            margin: 0 auto;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .nav-link {
+            color: #666 !important;
+            margin: 0 1rem;
+            transition: 0.3s ease;
+            padding: 0.5rem 1rem;
+        }
+
+        .nav-link:hover {
+            color: white;
+            background-color: rgb(233, 233, 233);
+            border-radius: 10px;
+        }
+
+        /* Enhanced Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: block;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            border-radius: 8px;
+            margin-top: 5px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            transform: translateY(-10px);
+        }
+
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-content a {
+            color: #666;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .nav-link.dropdown-toggle::after {
+            content: "";
+            display: inline-block;
+            margin-left: 5px;
+            vertical-align: middle;
+            border-top: 5px solid #666;
+            border-right: 5px solid transparent;
+            border-left: 5px solid transparent;
+        }
+
+        .main-logo {
+            width: 80px;
+            height: auto;
+            transition: 0.3s ease;
+        }
+
+        .main-logo:hover {
+            transform: scale(1.05);
+        }
+
+        /* Content Styles */
+        .page-title {
+            color: #556B47;
+            font-size: 2.5rem;
+            text-align: center;
+            margin: 4rem 0 2rem;
+            font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .content-section {
+            padding: 2rem 0 4rem;
+        }
+
+        .content-image {
+            width: 100%;
+            max-width: 500px;
+            max-height: 600px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .content-text {
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .symptoms-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 2rem;
+        }
+
+        .symptoms-list li {
+            padding: 0.5rem 0;
+            color: #4a5568;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .symptoms-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #556B47;
+        }
+
+        .section-subtitle {
+            color: #556B47;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            font-weight: 500;
+        }
+
+        .treatment-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .treatment-list li {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #4a5568;
+        }
+
+        .treatment-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #556B47;
+        }
+
+        .outcomes-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .outcomes-list li {
+            padding: 0.5rem 0;
+            color: #4a5568;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .outcomes-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #556B47;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #556B47;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            border: none;
+            margin-top: 2rem;
+        }
+
+        .cta-button:hover {
+            background-color: #445539;
+            color: white;
+        }
+
+        footer {
+            background-color: #2d3748;
+            color: white;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-text {
+            color: #e2e8f0;
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+                margin: 2rem 0;
+            }
+            
+            .content-image {
+                margin-top: 1rem;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <div class="nav-container">
+                <!-- Logo -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/logo.png" alt="Nest Counseling Logo" class="main-logo">
+                </a>
+                
+                <!-- Hamburger menu for mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <!-- Navigation items -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html" aria-current="page">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="therapists.html">Meet Our Therapists</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="/services">Issues We Treat</a>
+                            <div class="dropdown-content">
+                                <a href="perinatal.html">Perinatal Mental Health</a>
+                                <a href="trauma.html">Trauma Therapy</a>
+                                <a href="anxiety.html">Therapy for Anxiety</a>
+                                <a href="caregivers.html">Therapy for Caregivers</a>
+                                <a href="sexualassult.html">Therapy for Sexual Assult</a>
+                                <a href="grief.html">Grief Therapy</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="faq.html">FAQs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blogtest.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1 class="page-title">Anxiety & OCD</h1>
+
+        <section class="content-section">
+            <div class="row">
+                <div class="col-lg-6">
+                    <p class="content-text">
+                        Anxiety and OCD can be sneaky—showing up as constant worry, nagging fears, or routines that feel impossible to break. Maybe your mind races with "what-ifs," you find yourself constantly checking things, or you have intrusive thoughts that make you question everything. You might feel like your brain just won't shut off, no matter how hard you try. And while everyone experiences anxiety sometimes, this feels like it's taken over your life.
+                    </p>
+
+                    <h3 class="section-subtitle">Signs You Might Be Dealing with Anxiety or OCD:</h3>
+                    <ul class="symptoms-list">
+                        <li>Constant worry that feels impossible to control, even when things are going well</li>
+                        <li>Repetitive behaviors like checking, counting, or seeking reassurance to feel "safe"</li>
+                        <li>Intrusive thoughts that are distressing or make you feel ashamed</li>
+                        <li>Difficulty concentrating because your mind is always elsewhere</li>
+                        <li>Physical symptoms like a racing heart, tight chest, nausea, or feeling dizzy</li>
+                        <li>Avoiding situations, places, or people because of fear or anxiety</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <img src="img/anxiety.jpg" alt="Person expressing anxiety" class="content-image">
+                </div>
+            </div>
+
+            <h2 class="section-subtitle">How We Can Help: Breaking the Cycle</h2>
+            <p class="content-text">
+                You're not "too much" and you're not alone. Our approach to treating anxiety and OCD is practical, compassionate, and tailored to what you need most. We offer evidence-based therapies, including Exposure and Response Prevention (ERP) for OCD and other proven strategies for anxiety that actually work.
+            </p>
+
+            <div class="treatment-list">
+                <h3 class="section-subtitle">Our Approach:</h3>
+                <ul class="treatment-list">
+                    <li><strong>Exposure and Response Prevention (ERP):</strong> For OCD, ERP is one of the most effective treatments out there. It helps you face your fears without resorting to compulsive behaviors, teaching your brain that you're safe even when things feel uncomfortable.</li>
+                    <li><strong>Cognitive-Behavioral Therapy (CBT):</strong> CBT helps you challenge those negative thought patterns and create new, healthier ways of thinking. We work on revising those anxious brain loops so you can start living with less fear and more freedom.</li>
+                    <li><strong>Mindfulness and Grounding Techniques:</strong> Learn how to stay present, manage racing thoughts, and find calm in the chaos. We'll give you practical tools to help you navigate anxiety in real-time.</li>
+                </ul>
+            </div>
+
+            <h3 class="section-subtitle">Outcomes You Can Expect:</h3>
+            <ul class="outcomes-list">
+                <li>Feeling more in control of your thoughts and behaviors</li>
+                <li>Less anxiety, fewer intrusive thoughts, and reduced compulsions</li>
+                <li>Better sleep, improved focus, and a clearer mind</li>
+                <li>The ability to face situations that once felt impossible without panic or fear</li>
+                <li>Greater self-compassion and a toolkit of strategies to keep anxiety in check</li>
+            </ul>
+
+            <p class="content-text">
+                You don't have to keep living in a state of "what if." Let's work together to help you find peace and take back your life.
+            </p>
+
+            <div class="text-center">
+                <a href="https://nestcounseling.sessionshealth.com" class="cta-button">Schedule Online</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h4 class="footer-title">Nest Counseling</h4>
+                <p class="footer-text">Professional mental health services wherever you are.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

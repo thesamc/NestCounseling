@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Nest Counseling</title>
+     <!-- Essential SEO Meta Tags -->
+     <title>Nest Counseling | Professional Therapy Services</title>
+     <meta name="description" content="Professional counseling services. Specializing in anxiety, depression, trauma therapy, and relationship counseling. Schedule your consultation today.">
+     <meta name="keywords" content="counseling, therapy, mental health, anxiety therapy, depression counseling, Pennsylvania, therapist">
+     
+     <!-- Open Graph Meta Tags for Social Media -->
+     <meta property="og:title" content="Nest Counseling | Professional Therapy Services">
+     <meta property="og:description" content="Professional counseling services. Schedule your consultation today.">
+     <meta property="og:image" content="img/landscape.jpg">
+     <meta property="og:url" content="https://nestcounseling.samchutter.com">
+     <meta property="og:type" content="website">
+     
+     <!-- Twitter Card Meta Tags -->
+     <meta name="twitter:card" content="summary_large_image">
+     <meta name="twitter:title" content="Nest Counseling | Professional Therapy Services">
+     <meta name="twitter:description" content="Professional counseling services. Schedule your consultation today.">
+     <meta name="twitter:image" content="img/landscape.jpg">
+     
+     <!-- Canonical URL -->
+     <link rel="canonical" href="https://nestcounseling.samchutter.com">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+     
+    
+    <style>
+        /* Navbar Styles */
+        .navbar {
+            background-color: white;
+            width: 100%;
+            z-index: 1000;
+            padding: 0.5rem 0;
+        }
+
+        .navbar-brand {
+            margin-right: 2rem;
+            padding: 0;
+        }
+
+        .navbar-nav {
+            margin: 0 auto;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .nav-link {
+            color: #666 !important;
+            margin: 0 1rem;
+            transition: 0.3s ease;
+            padding: 0.5rem 1rem;
+        }
+
+        .nav-link:hover {
+            color: white;
+            background-color: rgb(233, 233, 233);
+            border-radius: 10px;
+        }
+
+        /* Enhanced Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: block;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            border-radius: 8px;
+            margin-top: 5px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            transform: translateY(-10px);
+        }
+
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-content a {
+            color: #666;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .nav-link.dropdown-toggle::after {
+            content: "";
+            display: inline-block;
+            margin-left: 5px;
+            vertical-align: middle;
+            border-top: 5px solid #666;
+            border-right: 5px solid transparent;
+            border-left: 5px solid transparent;
+        }
+
+        .main-logo {
+            width: 80px;
+            height: auto;
+            transition: 0.3s ease;
+        }
+
+        .main-logo:hover {
+            transform: scale(1.05);
+        }
+
+        /* Page Title Styles */
+        .page-title {
+            color: #556B47;
+            font-size: 2.5rem;
+            text-align: center;
+            margin: 4rem 0;
+            font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Contact Section Styles */
+        .contact-section {
+            background-color: #f8f9fa;
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            color: #556B47;
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #4a5568;
+            margin-bottom: 3rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            text-align: center;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            color: #556B47;
+            margin-bottom: 1rem;
+        }
+
+        .contact-title {
+            color: #2d3748;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .contact-link {
+            color: #556B47;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: #3d4d32;
+        }
+
+        /* Insurance Section Styles */
+        .insurance-section {
+            padding: 4rem 0;
+            background-color: white;
+        }
+
+        .insurance-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+
+        .insurance-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        .insurance-list li {
+            padding: 0.75rem 0;
+            color: #4a5568;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #edf2f7;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .insurance-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #2d3748;
+            color: white;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .footer-text {
+            color: #e2e8f0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar-nav {
+                margin: 1rem 0;
+            }
+            
+            .nav-link {
+                margin: 0.25rem 0;
+            }
+
+            .dropdown-content {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                margin: 0;
+                padding-left: 1rem;
+            }
+
+            .page-title {
+                font-size: 2rem;
+                margin: 2rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <div class="nav-container">
+                <!-- Logo -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/logo.png" alt="Nest Counseling Logo" class="main-logo">
+                </a>
+                
+                <!-- Hamburger menu for mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <!-- Navigation items -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html" aria-current="page">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="therapists.html">Meet Our Therapists</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="/services">Issues We Treat</a>
+                            <div class="dropdown-content">
+                                <a href="perinatal.html">Perinatal Mental Health</a>
+                                        <a href="trauma.html">Trauma Therapy</a>
+                                        <a href="anxiety.html">Therapy for Anxiety</a>
+                                        <a href="caregivers.html">Therapy for Caregivers</a>
+                                        <a href="sexualassult.html">Therapy for Sexual Assult</a>
+                                        <a href="grief.html">Grief Therapy</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="faq.html">FAQs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blogtest.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Title -->
+    <h1 class="page-title">Contact Us</h1>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-subtitle">We'd love to hear from you and help you find the support you need.</p>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="contact-card">
+                        <div class="contact-icon">📞</div>
+                        <h3 class="contact-title">Phone</h3>
+                        <a href="tel:6108101731" class="contact-link">610-810-1731</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-card">
+                        <div class="contact-icon">📧</div>
+                        <h3 class="contact-title">Email</h3>
+                        <a href="mailto:hello@nest-counseling.com" class="contact-link">hello@nest-counseling.com</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-card">
+                        <div class="contact-icon">📅</div>
+                        <h3 class="contact-title">Schedule Online</h3>
+                        <a href="https://nestcounseling.sessionshealth.com" class="contact-link">Book Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insurance Section -->
+    <section class="insurance-section">
+        <div class="container">
+            <h2 class="section-title">Insurance Plans We Accept</h2>
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="insurance-card">
+                        <ul class="insurance-list">
+                            <li>Aetna</li>
+                            <li>Highmark Blue Cross</li>
+                            <li>Independence Blue Cross</li>
+                            <li>Quest Behavioral Health</li>
+                            <li>Lyra</li>
+                            <li>Health Advocates EAP</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h4 class="footer-title">Nest Counseling</h4>
+                <p class="footer-text">Professional mental health services wherever you are.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

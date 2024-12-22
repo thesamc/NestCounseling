@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Essential SEO Meta Tags -->
+    <title>Therapists | Nest Counseling</title>
+    <meta name="description" content="Professional counseling services. Specializing in anxiety, depression, trauma therapy, and relationship counseling. Schedule your consultation today.">
+    <meta name="keywords" content="counseling, therapy, mental health, anxiety therapy, depression counseling, Pennsylvania, therapist">
+    
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Nest Counseling | Professional Therapy Services">
+    <meta property="og:description" content="Professional counseling services. Schedule your consultation today.">
+    <meta property="og:image" content="img/landscape.jpg">
+    <meta property="og:url" content="https://nestcounseling.samchutter.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nest Counseling | Professional Therapy Services">
+    <meta name="twitter:description" content="Professional counseling services. Schedule your consultation today.">
+    <meta name="twitter:image" content="img/landscape.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://nestcounseling.samchutter.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+      .hero-section {
+        background-image: url('img/landscape.jpg');
+        height: 60vh;
+        width: 100vw;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        background-repeat: no-repeat;
+      }
+
+      .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        /* Centers vertically */
+        justify-content: center;
+        /* Centers horizontally */
+      }
+
+      .navbar {
+        background-color: white;
+        width: 100%;
+        z-index: 1000;
+        padding: 0.5rem 0;
+        /* Reduced from 1rem */
+      }
+
+      .navbar-brand {
+        margin-right: 2rem;
+        padding: 0;
+        /* Remove default padding */
+      }
+
+      .navbar-nav {
+        margin: 0 auto;
+      }
+
+      .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      .hero-title {
+        position: relative;
+        color: white;
+        font-size: 5rem;
+        text-align: center;
+        font-weight: 700;
+        top: 20px;
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 1px;
+        transition: .3s ease;
+        margin: 0;
+        padding: 0;
+      }
+
+      .hero-title:hover {
+        transform: scale(1.03);
+      }
+
+      .content-section {
+        padding: 5rem 0;
+      }
+
+      .content-image {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 8px;
+        transition: .3s ease;
+      }
+
+      .content-image:hover {
+        transform: scale(1.03);
+      }
+
+      .section-title {
+        color: #2c3e50;
+        font-weight: 300;
+        margin-bottom: 2rem;
+      }
+
+      .nav-link {
+        color: #666 !important;
+        margin: 0 1rem;
+        transition: .3s ease;
+        padding: 0.5rem 1rem;
+      }
+
+      .nav-link:hover {
+        color: white;
+        background-color: rgb(233, 233, 233);
+        border-radius: 10px;
+      }
+
+      .service-card {
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        background: #fff;
+      }
+
+      .contact-section {
+        background-color: #f8f9fa;
+        padding: 4rem 0;
+      }
+
+      footer {
+        background-image: url(img/landscape2.jpg);
+        color: white;
+        padding: 3rem 0;
+        text-align: center;
+      }
+
+      footer a {
+        color: white;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        color: #ddd;
+      }
+
+      .contact-link {
+        text-decoration: none;
+      }
+
+      @media screen and (max-width:768px) {
+        .hero-section {
+          height: 40vh;
+        }
+      }
+
+      @media screen and (max-width:768px) {
+        .hero-title {
+          color: white;
+          font-size: 2rem;
+          text-align: center;
+          font-weight: 700;
+          font-family: 'Montserrat', sans-serif;
+          letter-spacing: 1px;
+          transition: .3s ease;
+        }
+
+        .hero-section {
+          background-image: url('img/landscape.jpg');
+          height: 60vh;
+          width: 100vw;
+          background-size: cover;
+          background-position: center;
+          position: relative;
+          background-repeat: no-repeat;
+        }
+
+        .hero-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.3);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .therapist-container {
+          flex-direction: column;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .therapist-image {
+          margin: 0 auto;
+        }
+      }
+
+      .therapist-section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4rem 1rem;
+      }
+
+      .section-title {
+        color: #556B47;
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: 4rem;
+        font-weight: 500;
+      }
+
+      .therapist-container {
+        display: flex;
+        gap: 2rem;
+        margin-bottom: 4rem;
+        align-items: flex-start;
+      }
+
+      .therapist-image {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 0.5rem;
+        object-fit: cover;
+        transition: .3s ease;
+      }
+
+      .therapist-image:hover {
+        transform: scale(1.03);
+      }
+
+      .therapist-info {
+        flex: 1;
+      }
+
+      .therapist-name {
+        color: #4a5568;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .therapist-bio {
+        color: #4a5568;
+        line-height: 1.7;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: block;
+        position: absolute;
+        background-color: white;
+        min-width: 200px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        border-radius: 8px;
+        margin-top: 5px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        transform: translateY(-10px);
+      }
+
+      .dropdown:hover .dropdown-content {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .dropdown-content a {
+        color: #666;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        transition: .3s ease;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #f8f9fa;
+        color: #333;
+      }
+
+      .nav-link.dropdown-toggle::after {
+        content: '';
+        display: inline-block;
+        margin-left: 5px;
+        vertical-align: middle;
+        border-top: 5px solid #666;
+        border-right: 5px solid transparent;
+        border-left: 5px solid transparent;
+      }
+
+      .logo-container {
+        display: flex;
+        justify-content: center;
+        padding: 2rem 0;
+        background-color: white;
+      }
+
+      .main-logo {
+        width: 80px;
+        /* Slightly smaller logo */
+        height: auto;
+        transition: .3s ease;
+      }
+
+      .main-logo:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <section id="header">
+      <header role="banner">
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg" role="navigation" aria-label="Main navigation">
+          <div class="container">
+              <div class="nav-container">
+                  <!-- Logo -->
+                  <a class="navbar-brand" href="index.html">
+                      <img src="img/logo.png" alt="Nest Counseling Logo" class="main-logo">
+                  </a>
+                  
+                  <!-- Hamburger menu for mobile -->
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  
+                  <!-- Navigation items -->
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav">
+                          <li class="nav-item">
+                              <a class="nav-link" href="index.html" aria-current="page">Home</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="therapists.html">Meet Our Therapists</a>
+                          </li>
+                          <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="/services">Issues We Treat</a>
+                              <div class="dropdown-content">
+                                <a href="perinatal.html">Perinatal Mental Health</a>
+                                <a href="trauma.html">Trauma Therapy</a>
+                                <a href="anxiety.html">Therapy for Anxiety</a>
+                                <a href="caregivers.html">Therapy for Caregivers</a>
+                                <a href="sexualassult.html">Therapy for Sexual Assult</a>
+                                <a href="grief.html">Grief Therapy</a>
+                              </div>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="faq.html">FAQs</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="blogtest.html">Blog</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="contact.html">Contact Us</a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </nav>
+      </header>
+    </section>
+    <section id="hero">
+      <main role="main">
+    <!-- Therapist Section -->
+    <section class="therapist-section">
+      <h1 class="section-title">Meet Our Therapists</h1>
+      <hr>
+      <!-- First Therapist -->
+      <div class="therapist-container">
+        <div>
+          <img src="img/megan.jpeg" alt="Megan Ellow" class="therapist-image">
+        </div>
+        <div class="therapist-info">
+          <h2 class="therapist-name">Megan Ellow, LCSW, Owner</h2>
+          <p class="therapist-bio"> Megan is a licensed clinical social worker in Delaware and Pennsylvania. She graduated with a masters degree in Social Work from Delaware State University. She has worked over 10 years in mental health treatment with children, adults and families. Her private practice specializes in Perinatal Mental Health, Trauma and Anxiety. She has advanced training in Perinatal Mental Health from Postpartum Support International. She is also trained in EMDR, which is a treatment for trauma. </p>
+        </div>
+      </div>
+      <hr>
+      <!-- Second Therapist -->
+      <div class="therapist-container">
+        <div>
+          <img src="img/allison.jpg" alt="Allison Barbuti" class="therapist-image">
+        </div>
+        <div class="therapist-info">
+          <h2 class="therapist-name">Allison Barbuti, LSW</h2>
+          <p class="therapist-bio"> Allison Barbuti is a Licensed Social Worker in Pennsylvania holding a masters degree from Bryn Mawr College. Allison specializes in working with people managing anxiety, stress, life transitions, parenthood, maternal wellness and trauma. She has training in Attachment, Mindfulness, EFT/Tapping, as well as Meaning Centered psychotherapy and is currently working under the supervision of Megan Ellow toward her Clinical License. </p>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer role="contentinfo" id="footer">
+      <div class="container">
+        <div class="row">
+            <h4>Nest Counseling</h4>
+            <p>Professional mental health services wherever you are.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

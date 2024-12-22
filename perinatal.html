@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perinatal Mental Health | Nest Counseling</title>
+    <meta name="description" content="Specialized support for perinatal mental health, including postpartum depression, anxiety, and birth trauma.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Navbar Styles */
+        .navbar {
+            background-color: white;
+            width: 100%;
+            z-index: 1000;
+            padding: 0.5rem 0;
+        }
+
+        .navbar-brand {
+            margin-right: 2rem;
+            padding: 0;
+        }
+
+        .navbar-nav {
+            margin: 0 auto;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .nav-link {
+            color: #666 !important;
+            margin: 0 1rem;
+            transition: 0.3s ease;
+            padding: 0.5rem 1rem;
+        }
+
+        .nav-link:hover {
+            color: white;
+            background-color: rgb(233, 233, 233);
+            border-radius: 10px;
+        }
+
+        /* Enhanced Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: block;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            border-radius: 8px;
+            margin-top: 5px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            transform: translateY(-10px);
+        }
+
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-content a {
+            color: #666;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .nav-link.dropdown-toggle::after {
+            content: "";
+            display: inline-block;
+            margin-left: 5px;
+            vertical-align: middle;
+            border-top: 5px solid #666;
+            border-right: 5px solid transparent;
+            border-left: 5px solid transparent;
+        }
+
+        .main-logo {
+            width: 80px;
+            height: auto;
+            transition: 0.3s ease;
+        }
+
+        .main-logo:hover {
+            transform: scale(1.05);
+        }
+
+        /* Content Styles */
+        .page-title {
+            color: #556B47;
+            font-size: 2.5rem;
+            text-align: center;
+            margin: 4rem 0 2rem;
+            font-weight: 500;
+        }
+
+        .content-section {
+            padding: 2rem 0 4rem;
+        }
+
+        .content-image {
+            width: 100%;
+            max-width: 550px;
+            max-height: 550px;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .content-text {
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .symptoms-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 2rem;
+        }
+
+        .symptoms-list li {
+            padding: 0.5rem 0;
+            color: #4a5568;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .symptoms-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #556B47;
+        }
+
+        .section-subtitle {
+            color: #556B47;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            font-weight: 500;
+        }
+
+        .treatment-section {
+            background-color: #f8f9fa;
+            padding: 3rem 0;
+            margin: 2rem 0;
+        }
+
+        .treatment-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .treatment-list li {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .treatment-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #556B47;
+        }
+
+        .outcomes-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .outcomes-list li {
+            padding: 0.5rem 0;
+            color: #4a5568;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .outcomes-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #556B47;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #556B47;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            border: none;
+            margin-top: 2rem;
+        }
+
+        .cta-button:hover {
+            background-color: #445539;
+            color: white;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #2d3748;
+            color: white;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-text {
+            color: #e2e8f0;
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+                margin: 2rem 0;
+            }
+            
+            .content-image {
+                margin-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <div class="nav-container">
+                <!-- Logo -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/logo.png" alt="Nest Counseling Logo" class="main-logo">
+                </a>
+                
+                <!-- Hamburger menu for mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <!-- Navigation items -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html" aria-current="page">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="therapists.html">Meet Our Therapists</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="/services">Issues We Treat</a>
+                            <div class="dropdown-content">
+                                <a href="perinatal.html">Perinatal Mental Health</a>
+                                <a href="trauma.html">Trauma Therapy</a>
+                                <a href="anxiety.html">Therapy for Anxiety</a>
+                                <a href="caregivers.html">Therapy for Caregivers</a>
+                                <a href="sexualassult.html">Therapy for Sexual Assult</a>
+                                <a href="grief.html">Grief Therapy</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="faq.html">FAQs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blogtest.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1 class="page-title">Perinatal Mental Health</h1>
+
+        <section class="content-section">
+            <div class="row">
+                <div class="col-lg-6">
+                    <p class="content-text">
+                        Maybe you thought this would be the happiest time of your life, but instead, you feel overwhelmed, anxious, or just...off. You might find yourself crying for no reason, feeling disconnected from your baby, or constantly worrying about every little thing. It's more than just the "baby blues"—you might be dealing with mental health challenges like postpartum depression, anxiety, or even birth trauma.
+                    </p>
+
+                    <h3 class="section-subtitle">Signs You Might Be Struggling:</h3>
+                    <ul class="symptoms-list">
+                        <li>Feeling anxious, sad, or irritable most of the time</li>
+                        <li>Trouble bonding with your baby or feeling guilty for not loving motherhood 24/7</li>
+                        <li>Constant worries about your baby's health or your ability to be a "good" parent</li>
+                        <li>Flashbacks or intense fear when thinking about your birth experience</li>
+                        <li>Difficulty sleeping, even when the baby is asleep, or feeling exhausted all the time</li>
+                        <li>Thoughts of running away or wishing things were different</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <img src="img/holding.jpg" alt="Mother holding baby" class="content-image">
+                </div>
+            </div>
+
+            <h2 class="section-subtitle">How We Can Help: A Path to Feeling Like You Again</h2>
+            <p class="content-text">
+                We get it—this is tough, and asking for help isn't always easy. But you don't have to keep feeling this way. Our therapy approach is tailored to help you navigate the emotional rollercoaster of pregnancy, birth, and new parenthood. We offer specialized support for perinatal mental health, including:
+            </p>
+
+            <ul class="treatment-list">
+                <li><strong>EMDR for Birth Trauma:</strong> We use EMDR (Eye Movement Desensitization and Reprocessing) to help you heal from a difficult or traumatic birth. EMDR can help you process these painful memories so they don't keep popping up when you least expect them.</li>
+                <li><strong>Practical, No-Judgment Therapy:</strong> We provide a safe space to talk about your fears, worries, and everything in between. No topic is off-limits, and we'll work together to help you feel more grounded and confident.</li>
+                <li><strong>Tools to Manage Anxiety & Overwhelm:</strong> Learn coping strategies that actually fit into your busy life as a parent. Whether it's calming your mind during a 2 a.m. feeding or finding a moment of peace amid the chaos, we've got you.</li>
+            </ul>
+
+            <h3 class="section-subtitle">Outcomes You Can Expect:</h3>
+            <ul class="outcomes-list">
+                <li>Feeling more connected to yourself and your baby</li>
+                <li>A reduction in anxiety, intrusive thoughts, and overwhelming guilt</li>
+                <li>Healing from your birth experience, no longer haunted by what happened</li>
+                <li>Confidence in your parenting choices and the ability to enjoy moments without the constant dread</li>
+            </ul>
+
+            <p class="content-text">
+                You're not alone in this, and things can get better. Let's work together to help you feel more like yourself again.
+            </p>
+
+            <div class="text-center">
+                <a href="https://nestcounseling.sessionshealth.com" class="cta-button">Schedule Online</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h4 class="footer-title">Nest Counseling</h4>
+                <p class="footer-text">Professional mental health services wherever you are.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healing After Sexual Assault | Nest Counseling</title>
+    <meta name="description" content="Compassionate, trauma-informed therapy for survivors of sexual assault. Evidence-based approaches including EMDR in a safe, non-judgmental space.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- [Previous CSS styles remain exactly the same] -->
+    <style>
+        /* [All the same CSS as the previous file] */
+        .navbar {
+            background-color: white;
+            width: 100%;
+            z-index: 1000;
+            padding: 0.5rem 0;
+        }
+
+        .navbar-brand {
+            margin-right: 2rem;
+            padding: 0;
+        }
+
+        .navbar-nav {
+            margin: 0 auto;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .nav-link {
+            color: #666 !important;
+            margin: 0 1rem;
+            transition: 0.3s ease;
+            padding: 0.5rem 1rem;
+        }
+
+        .nav-link:hover {
+            color: white;
+            background-color: rgb(233, 233, 233);
+            border-radius: 10px;
+        }
+
+        /* Enhanced Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: block;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            border-radius: 8px;
+            margin-top: 5px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            transform: translateY(-10px);
+        }
+
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-content a {
+            color: #666;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .nav-link.dropdown-toggle::after {
+            content: "";
+            display: inline-block;
+            margin-left: 5px;
+            vertical-align: middle;
+            border-top: 5px solid #666;
+            border-right: 5px solid transparent;
+            border-left: 5px solid transparent;
+        }
+
+        .main-logo {
+            width: 80px;
+            height: auto;
+            transition: 0.3s ease;
+        }
+
+        .main-logo:hover {
+            transform: scale(1.05);
+        }
+
+        /* Content Styles */
+        .page-title {
+            color: #556B47;
+            font-size: 2.5rem;
+            text-align: center;
+            margin: 4rem 0 2rem;
+            font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .content-section {
+            padding: 2rem 0 4rem;
+        }
+
+        .content-image {
+            width: 100%;
+            max-width: 500px;
+            max-height: 550px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .content-text {
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .symptoms-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 2rem;
+        }
+
+        .symptoms-list li {
+            padding: 0.5rem 0;
+            color: #4a5568;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .symptoms-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #556B47;
+        }
+
+        .section-subtitle {
+            color: #556B47;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            font-weight: 500;
+        }
+
+        .treatment-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .treatment-list li {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #4a5568;
+        }
+
+        .treatment-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #556B47;
+        }
+
+        .outcomes-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .outcomes-list li {
+            padding: 0.5rem 0;
+            color: #4a5568;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .outcomes-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #556B47;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #556B47;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            border: none;
+            margin-top: 2rem;
+        }
+
+        .cta-button:hover {
+            background-color: #445539;
+            color: white;
+        }
+
+        footer {
+            background-color: #2d3748;
+            color: white;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-text {
+            color: #e2e8f0;
+        }
+
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+                margin: 2rem 0;
+            }
+            
+            .content-image {
+                margin-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg" role="navigation" aria-label="Main navigation">
+        <div class="container">
+            <div class="nav-container">
+                <!-- Logo -->
+                <a class="navbar-brand" href="index.html">
+                    <img src="img/logo.png" alt="Nest Counseling Logo" class="main-logo">
+                </a>
+                
+                <!-- Hamburger menu for mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <!-- Navigation items -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html" aria-current="page">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="therapists.html">Meet Our Therapists</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="/services">Issues We Treat</a>
+                            <div class="dropdown-content">
+                                <a href="perinatal.html">Perinatal Mental Health</a>
+                                <a href="trauma.html">Trauma Therapy</a>
+                                <a href="anxiety.html">Therapy for Anxiety</a>
+                                <a href="caregivers.html">Therapy for Caregivers</a>
+                                <a href="sexualassult.html">Therapy for Sexual Assult</a>
+                                <a href="grief.html">Grief Therapy</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="faq.html">FAQs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blogtest.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1 class="page-title">Healing After Sexual Assault</h1>
+
+        <section class="content-section">
+            <div class="row">
+                <div class="col-lg-6">
+                    <p class="content-text">
+                        Experiencing sexual assault can leave deep emotional scars that affect every aspect of your life. It's not just about what happened—it's about how it's still impacting you today. You might feel overwhelmed by flashbacks, struggle with anxiety or shame, or find it hard to trust others, even those closest to you. It's okay to feel lost, angry, or unsure of how to move forward. Your pain is real, but so is the possibility of healing.
+                    </p>
+
+                    <p class="content-text">
+                        <strong>You Are Not Alone.</strong><br>
+                        At Nest Counseling, we understand that sexual assault isn't just something you "get over"—it's something you work through, at your own pace, with the right support. Our approach is compassionate, trauma-informed, and deeply respectful of your boundaries. We believe in creating a safe, non-judgmental space where you can process your experiences, reconnect with yourself, and begin to heal.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="img/sa.jpg" alt="Person in contemplative moment" class="content-image">
+                </div>
+            </div>
+
+            <h2 class="section-subtitle">Specialized Therapy That Meets You Where You Are</h2>
+            <p class="content-text">
+                Healing from sexual assault looks different for everyone. That's why we offer a range of therapies, including EMDR (Eye Movement Desensitization and Reprocessing), a powerful method for processing trauma, along with mindfulness, somatic work, and other approaches tailored to your unique needs. We're here to help you release the pain and reclaim the parts of yourself that trauma tried to silence.
+            </p>
+
+            <h2 class="section-subtitle">What Healing Can Look Like for You</h2>
+            <p class="content-text">
+                It's okay if you're not sure where to start—that's what we're here for. In therapy, you'll have the opportunity to:
+            </p>
+
+            <ul class="treatment-list">
+                <li><strong>Reclaim Your Voice:</strong> Understand and process your emotions without judgment.</li>
+                <li><strong>Set Healthy Boundaries:</strong> Learn how to protect your energy and create safe, empowering connections with others.</li>
+                <li><strong>Rediscover Your Strength:</strong> Connect with your resilience and rediscover the power within you that was never truly lost.</li>
+            </ul>
+
+            <h2 class="section-subtitle">Ready to Take the Next Step?</h2>
+            <p class="content-text">
+                When you're ready, we're here. Book a session or reach out to learn more about how we can support you in your healing process. You deserve to feel whole again, and together, we can help you get there.
+            </p>
+
+            <div class="text-center">
+                <a href="https://nestcounseling.sessionshealth.com" class="cta-button">Schedule Online</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h4 class="footer-title">Nest Counseling</h4>
+                <p class="footer-text">Professional mental health services wherever you are.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
